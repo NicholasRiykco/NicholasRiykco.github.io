@@ -1,0 +1,103 @@
+.container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.sticker {
+  position: absolute;
+  opacity: 0.3;
+  animation: floatAcross linear infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes floatAcross {
+  0% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateX(30vw) rotate(15deg) scale(1.1);
+  }
+  50% {
+    transform: translateX(60vw) rotate(-10deg) scale(0.95);
+  }
+  75% {
+    transform: translateX(90vw) rotate(20deg) scale(1.05);
+  }
+  100% {
+    transform: translateX(120vw) rotate(0deg) scale(1);
+  }
+}
+
+/* Add some variety with different animation styles for some stickers */
+.sticker:nth-child(3n) {
+  animation-name: floatAcrossBouncy;
+}
+
+.sticker:nth-child(5n) {
+  animation-name: floatAcrossWobble;
+}
+
+@keyframes floatAcrossBouncy {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  20% {
+    transform: translateX(24vw) translateY(-20px) rotate(10deg);
+  }
+  40% {
+    transform: translateX(48vw) translateY(10px) rotate(-5deg);
+  }
+  60% {
+    transform: translateX(72vw) translateY(-15px) rotate(15deg);
+  }
+  80% {
+    transform: translateX(96vw) translateY(5px) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes floatAcrossWobble {
+  0% {
+    transform: translateX(0) scale(1) rotate(-5deg);
+  }
+  10% {
+    transform: translateX(12vw) scale(1.15) rotate(5deg);
+  }
+  20% {
+    transform: translateX(24vw) scale(0.9) rotate(-8deg);
+  }
+  30% {
+    transform: translateX(36vw) scale(1.1) rotate(8deg);
+  }
+  40% {
+    transform: translateX(48vw) scale(0.95) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(60vw) scale(1.12) rotate(6deg);
+  }
+  60% {
+    transform: translateX(72vw) scale(0.92) rotate(-6deg);
+  }
+  70% {
+    transform: translateX(84vw) scale(1.08) rotate(5deg);
+  }
+  80% {
+    transform: translateX(96vw) scale(0.98) rotate(-3deg);
+  }
+  90% {
+    transform: translateX(108vw) scale(1.05) rotate(3deg);
+  }
+  100% {
+    transform: translateX(120vw) scale(1) rotate(0deg);
+  }
+}

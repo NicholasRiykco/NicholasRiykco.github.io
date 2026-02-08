@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicholas Riykco | Coming Soon</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #f5f5f0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, sans-serif;
+        color: #333;
+        padding: 20px;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+        color: #2a2a2a;
+      }
+
+      .message {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+      }
+
+      .loading-container {
+        width: 100%;
+        height: 24px;
+        background: #e0e0d8;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        border: 3px solid #ccc;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .loading-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(
+          90deg,
+          #4ade80 0%,
+          #22c55e 50%,
+          #4ade80 100%
+        );
+        background-size: 20px 100%;
+        border-radius: 2px;
+        animation: fill 3s ease-in-out infinite, stripes 0.5s linear infinite;
+        position: relative;
+      }
+
+      .loading-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 8px,
+          rgba(255, 255, 255, 0.2) 8px,
+          rgba(255, 255, 255, 0.2) 16px
+        );
+        animation: shimmer 0.3s linear infinite;
+      }
+
+      @keyframes fill {
+        0% {
+          width: 0%;
+        }
+        50% {
+          width: 100%;
+        }
+        50.1% {
+          width: 0%;
+        }
+        100% {
+          width: 0%;
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(16px);
+        }
+      }
+
+      .loading-segments {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        gap: 3px;
+        padding: 3px;
+      }
+
+      .segment {
+        flex: 1;
+        background: transparent;
+        border-radius: 2px;
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      .segment:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .segment:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+      .segment:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .segment:nth-child(4) {
+        animation-delay: 0.45s;
+      }
+      .segment:nth-child(5) {
+        animation-delay: 0.6s;
+      }
+      .segment:nth-child(6) {
+        animation-delay: 0.75s;
+      }
+      .segment:nth-child(7) {
+        animation-delay: 0.9s;
+      }
+      .segment:nth-child(8) {
+        animation-delay: 1.05s;
+      }
+      .segment:nth-child(9) {
+        animation-delay: 1.2s;
+      }
+      .segment:nth-child(10) {
+        animation-delay: 1.35s;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          background: transparent;
+          box-shadow: none;
+        }
+        25%,
+        75% {
+          background: linear-gradient(180deg, #4ade80 0%, #22c55e 100%);
+          box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+        }
+      }
+
+      .status {
+        font-size: 0.85rem;
+        color: #888;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        animation: blink 1s step-end infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 30px;
+        font-size: 0.8rem;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Nicholas Riykco</h1>
+      <p class="message">
+        WIP. Sorry about that. Wesbites current under construction (redesign)...
+        🛻 👷.<br />
+      </p>
+      <div class="loading-container">
+        <div class="loading-segments">
+          <div class="segment"></div>
+          <div class="segment"></div>
+          <div class="segment"></div>
+          <div class="segment"></div>
+          <div class="segment"></div>
+          <div class="segment"></div>
+          <div class="segment"></div>
+          <div class="segment"></div>
+          <div class="segment"></div>
+          <div class="segment"></div>
+        </div>
+      </div>
+      <p class="status">Work in progress</p>
+    </div>
+    <p class="footer">&copy; 2025 Nicholas Riykco</p>
+  </body>
+</html>

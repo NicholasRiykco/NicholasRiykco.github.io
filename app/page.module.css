@@ -1,0 +1,231 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fffef0 0%, #fff9e6 50%, #fffacd 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+  color: #333;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cartoon characters container */
+.cartoons {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.cartoon {
+  position: absolute;
+  opacity: 0.15;
+}
+
+.cartoonSvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Doraemon - top left */
+.doraemon {
+  top: 10%;
+  left: 5%;
+  width: 120px;
+  height: 120px;
+  animation: wobbleRight 2s ease-in-out infinite;
+}
+
+/* Shin Chan - top right */
+.shinChan {
+  top: 15%;
+  right: 8%;
+  width: 100px;
+  height: 100px;
+  animation: wobbleLeft 2.5s ease-in-out infinite;
+}
+
+/* Doraemon 2 - bottom left */
+.doraemon2 {
+  bottom: 15%;
+  left: 10%;
+  width: 90px;
+  height: 90px;
+  animation: wobbleLeft 2.2s ease-in-out infinite;
+}
+
+/* Shin Chan 2 - bottom right */
+.shinChan2 {
+  bottom: 20%;
+  right: 5%;
+  width: 110px;
+  height: 110px;
+  animation: wobbleRight 1.8s ease-in-out infinite;
+}
+
+@keyframes wobbleRight {
+  0%, 100% {
+    transform: translateX(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(20px) rotate(5deg);
+  }
+}
+
+@keyframes wobbleLeft {
+  0%, 100% {
+    transform: translateX(0) rotate(5deg);
+  }
+  50% {
+    transform: translateX(-20px) rotate(-5deg);
+  }
+}
+
+.container {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(255, 200, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #2a2a2a;
+  background: linear-gradient(135deg, #ff6b6b, #ffa500, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.message {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.loadingContainer {
+  width: 100%;
+  height: 24px;
+  background: #fff5e0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 3px solid #ffd700;
+  box-shadow: inset 0 2px 4px rgba(255, 200, 0, 0.2);
+  position: relative;
+}
+
+.loadingSegments {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+}
+
+.segment {
+  flex: 1;
+  background: transparent;
+  border-radius: 6px;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background: transparent;
+    box-shadow: none;
+  }
+  25%, 75% {
+    background: linear-gradient(180deg, #ffd700 0%, #ffa500 100%);
+    box-shadow: 0 0 8px rgba(255, 200, 0, 0.6);
+  }
+}
+
+.status {
+  font-size: 0.85rem;
+  color: #888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: blink 1s step-end infinite;
+  margin-bottom: 2rem;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 200, 0, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 200, 0, 0.5);
+  background: linear-gradient(135deg, #ffe44d 0%, #ffb732 100%);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.footer {
+  position: absolute;
+  bottom: 30px;
+  font-size: 0.8rem;
+  color: #999;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .cartoon {
+    opacity: 0.1;
+  }
+
+  .doraemon,
+  .shinChan,
+  .doraemon2,
+  .shinChan2 {
+    width: 80px;
+    height: 80px;
+  }
+}
